@@ -1,4 +1,4 @@
-# Completed Katas
+# Completed Katas [![Build Status](https://travis-ci.org/W-Ely/code-katas.svg?branch=master)](https://travis-ci.org/W-Ely/code-katas) [![Coverage Status](https://coveralls.io/repos/github/W-Ely/code-katas/badge.svg?branch=master)](https://coveralls.io/github/W-Ely/code-katas?branch=master)
 
 **Most Digits (7th kyu)**
 
@@ -37,6 +37,12 @@
 - **Module**: `split_strings.py`
 - **Tests**: `test_split_strings.py`
 - **URL**: [challenge url](https://www.codewars.com/kata/515de9ae9dcfc28eb6000001)
+
+**Sort deck of cards (7 kyu)**
+
+- **Module**: `sort_cards.py`
+- **Tests**: `test_sort_cards.py`
+- **URL**: [challenge url](https://www.codewars.com/kata/sort-deck-of-cards/train/python)
 
 
 
