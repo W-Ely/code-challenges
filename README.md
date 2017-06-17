@@ -45,6 +45,12 @@
 - **URL**: [challenge url](https://www.codewars.com/kata/sort-deck-of-cards/train/python)
 
 
+**String Pyramid (6 kyu)**
+
+- **Module**: `string_pyramid.py`
+- **Tests**: `test_string_pyramid.py`
+- **URL**: [challenge url](http://www.codewars.com/kata/string-pyramid/train/python)
+
 
 # On Codewars
 **URL**(https://www.codewars.com/users/W-Ely/completed_solutions)
