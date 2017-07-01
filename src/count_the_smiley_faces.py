@@ -1,4 +1,4 @@
-"""Count the smiley faces!
+"""Count the smiley faces.
 
 betegelse
 
@@ -9,6 +9,7 @@ def count_smileys(arr):
 
 
 def count_smileys(arr):
+    """Count the smiles."""
     total = 0
     for item in arr:
         smile = True
