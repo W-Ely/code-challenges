@@ -76,4 +76,11 @@
 
 **Module**: `parentetics.py`
 - **Tests**: `test_parentetics.py`
-- **URL**: (https://codefellows.github.io/sea-python-401d6/assignments/proper_parenthetics.html)
+- **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d6/assignments/proper_parenthetics.html)
+
+
+**The Forbes Top 40**
+
+**Module**: `forbes.py`
+- **Tests**: `test_forbes.py`
+- **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d5/assignments/kata_forbes_billionaires.html)
