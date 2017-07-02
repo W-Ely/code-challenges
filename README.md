@@ -67,4 +67,13 @@
 -
 
 # On Codewars
-**URL**(https://www.codewars.com/users/W-Ely/completed_solutions)
+**URL** [](https://www.codewars.com/users/W-Ely/completed_solutions)
+
+
+# Non-Codewars katas
+
+**Properm Parentetics**
+
+**Module**: `proper_parentetics.py`
+- **Tests**: `test_proper_parentetics.py`
+- **URL**: (https://codefellows.github.io/sea-python-401d6/assignments/proper_parenthetics.html)
