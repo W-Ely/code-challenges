@@ -74,6 +74,6 @@
 
 **Properm Parentetics**
 
-**Module**: `proper_parentetics.py`
-- **Tests**: `test_proper_parentetics.py`
+**Module**: `parentetics.py`
+- **Tests**: `test_parentetics.py`
 - **URL**: (https://codefellows.github.io/sea-python-401d6/assignments/proper_parenthetics.html)

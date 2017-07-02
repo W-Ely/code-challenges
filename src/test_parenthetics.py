@@ -1,5 +1,5 @@
 """Module tests proper_paranthetics kata."""
-from proper_parenthetics import proper_paranthetics
+from parenthetics import proper_paranthetics
 
 
 def test_correct_order():
