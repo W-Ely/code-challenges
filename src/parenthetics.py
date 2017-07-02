@@ -39,17 +39,18 @@ def proper_paranthetics(string):
     """
     stack = Stack()
     ref_in = {
-        '(': ')', '[': ']', '<': '>', '"': '"', '{': '}', '`': '`'
+        '(': ')', '[': ']', '<': '>', '{': '}'
     }
     ref_out = {
-        ')', ']', '>', '"', "}", '`'
+        ')', ']', '>', '}'
     }
-    last_in = None
-    for chr in string:
-        if chr in ref_in:
-            stack.push(chr)
-        if chr in ref_out:
-            first_out = stack.pop()
-    return -1
-    # return 0
-    # return 1
+    for char in string:
+        if char in ref_in:
+            stack.push(ref_in[char])
+        if char in ref_out:
+            out = stack.pop()
+            if out is not char:
+                return -1
+    if stack.head:
+        return 1
+    return 0
