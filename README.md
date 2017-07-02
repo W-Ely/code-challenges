@@ -58,5 +58,13 @@
 - **Tests**: `test_pyramid_slide_down.py`
 - **URL**: [challenge url](https://www.codewars.com/kata/pyramid-slide-down/train/python)
 
+
+**Pyramid Slide Down (4 kyu)**
+
+- **Module**: `pyramid_slide_down.py`
+- **Tests**: `test_pyramid_slide_down.py`
+- **URL**: [challenge url](https://www.codewars.com/kata/pyramid-slide-down/train/python)
+-
+
 # On Codewars
 **URL**(https://www.codewars.com/users/W-Ely/completed_solutions)
