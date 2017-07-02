@@ -4,6 +4,13 @@ import os
 import sys
 
 
+with open(os.path.join(
+    sys.path[0],
+    "STATIC/forbes_billionaires_2016.json"
+)) as json_file:
+    DATA = json.loads(json_file.read())
+
+
 def forbes():
     """Return the name, net worth, and industry.
 
@@ -13,13 +20,7 @@ def forbes():
     oldest = {}
     youngest = {}
 
-    with open(os.path.join(
-        sys.path[0],
-        "STATIC/forbes_billionaires_2016.json"
-    )) as json_file:
-        data = json.loads(json_file.read())
-
-    for entry in data:
+    for entry in DATA:
         age = entry['age']
         if not oldest or (age > oldest['age'] and age < 80):
             oldest.update(entry)
