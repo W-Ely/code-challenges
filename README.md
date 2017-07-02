@@ -64,7 +64,7 @@
 - **Module**: `snail.py`
 - **Tests**: `test_snail.py`
 - **URL**: [challenge url](https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1/solutions/python)
--
+
 
 # On Codewars
 **URL** [W-Ely's Complete Solutions](https://www.codewars.com/users/W-Ely/completed_solutions)
@@ -74,13 +74,13 @@
 
 **Properm Parentetics**
 
-**Module**: `parentetics.py`
+- **Module**: `parentetics.py`
 - **Tests**: `test_parentetics.py`
 - **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d6/assignments/proper_parenthetics.html)
 
 
 **The Forbes Top 40**
 
-**Module**: `forbes.py`
+- **Module**: `forbes.py`
 - **Tests**: `test_forbes.py`
 - **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d5/assignments/kata_forbes_billionaires.html)
