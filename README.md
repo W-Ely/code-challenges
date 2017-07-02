@@ -67,7 +67,7 @@
 -
 
 # On Codewars
-**URL** [](https://www.codewars.com/users/W-Ely/completed_solutions)
+**URL** [W-Ely's Complete Solutions](https://www.codewars.com/users/W-Ely/completed_solutions)
 
 
 # Non-Codewars katas
