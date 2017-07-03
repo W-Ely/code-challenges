@@ -1,0 +1,9 @@
+[run]
+omit =
+  */forbes_billionaires_2016.json
+
+source =
+    src
+
+[report]
+show_missing = True
