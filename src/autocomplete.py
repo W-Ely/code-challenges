@@ -20,4 +20,7 @@ class Autocomplete(Trie):
     def __call__(self, string):
         """Call class, get a list."""
         auto = self.word_traverse(string)
-        return [next(auto) for _ in range(self._comps)]
+        try:
+            return [next(auto) for _ in range(self._comps)]
+        except KeyError:
+            return []
