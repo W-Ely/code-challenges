@@ -84,3 +84,14 @@
 - **Module**: `forbes.py`
 - **Tests**: `test_forbes.py`
 - **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d5/assignments/kata_forbes_billionaires.html)
+
+
+**Autocomplete**
+
+- **Modules**: `autocomplete.py, trie.py`
+- **Tests**: `test_autocomplete.py, test_trie.py`
+- **URL**: [https://codefellows.github.io](https://codefellows.github.io/sea-python-401d6/assignments/kata_autocomplete.html)
+
+- The class should be based in some way on a trie tree. The class should take a list of words to be a vocabulary as an argument on initialization. It should also accept a max_completions argument, which controls the maximum number of suggested completions for a given string. The max_completions argument should default to 5.
+
+- The input to the call method for the class will be the string the user has typed. When called, this class should return a list of at most max_completions suggested words. If there are more available completions than allowed, it decides which to return. If there are no completions available, it should return an empty list. The class should handle inappropriate inputs correctly.
