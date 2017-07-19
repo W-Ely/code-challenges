@@ -45,3 +45,17 @@ def test_handles_non_list_instantiation():
     """Test Autocomplete requires a list."""
     with pytest.raises(TypeError):
         Autocomplete('test')
+
+
+def test_handles_non_string_call_param():
+    """Test handles non string call param."""
+    auto = Autocomplete(
+        ['test', 'xyzzy', 'tesst', 'testing', 'tested']
+    )
+    assert auto({'test': 'test'}) == []
+
+
+def test_handles_non_numeric_max_completions_input():
+    """Test non numeric max_completion."""
+    with pytest.raises(TypeError):
+        Autocomplete(['test'], 'Not a Number')

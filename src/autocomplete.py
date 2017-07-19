@@ -8,7 +8,12 @@ class Autocomplete(Trie):
     def __init__(self, words, max_completions=5):
         """Init the Autocomplete."""
         Trie.__init__(self)
-        self._comps = max_completions
+        if type(max_completions) is int and max_completions >= 0:
+            self._comps = max_completions
+        else:
+            raise TypeError(
+                "Max completions must be a positive integer"
+            )
         try:
             with open(words, 'r') as file:
                 for line in file:
@@ -30,9 +35,3 @@ class Autocomplete(Trie):
             except (KeyError, StopIteration):
                 break
         return result
-
-
-auto = Autocomplete(
-        ['test', 'xyzzy', 'tesst', 'testing', 'tested']
-    )
-print(len(auto('test')))
