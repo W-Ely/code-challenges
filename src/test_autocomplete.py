@@ -1,5 +1,6 @@
 """Module tests Autocomplete."""
 from autocomplete import Autocomplete
+import pytest
 
 
 def test_autocomplete_with_simple_list_of_words():
@@ -38,3 +39,9 @@ def test_autocomplete_with_only_three_found_words():
         ['test', 'xyzzy', 'tesst', 'testing', 'tested']
     )
     assert len(auto('test')) == 3
+
+
+def test_handles_non_list_instantiation():
+    """Test Autocomplete requires a list."""
+    with pytest.raises(TypeError):
+        Autocomplete('test')

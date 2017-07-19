@@ -13,9 +13,12 @@ class Autocomplete(Trie):
             with open(words, 'r') as file:
                 for line in file:
                     self.insert(" ".join(line.split()))
-        except Exception:
-            for word in words:
-                self.insert(word)
+        except (FileNotFoundError, TypeError):
+            if type(words) in (tuple, list):
+                for word in words:
+                    self.insert(word)
+            else:
+                raise TypeError("Please instantiate with list of words.")
 
     def __call__(self, string):
         """Call class, get a list."""
