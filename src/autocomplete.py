@@ -20,7 +20,16 @@ class Autocomplete(Trie):
     def __call__(self, string):
         """Call class, get a list."""
         auto = self.word_traverse(string)
-        try:
-            return [next(auto) for _ in range(self._comps)]
-        except KeyError:
-            return []
+        result = []
+        for _ in range(self._comps):
+            try:
+                result.append(next(auto))
+            except (KeyError, StopIteration):
+                break
+        return result
+
+
+auto = Autocomplete(
+        ['test', 'xyzzy', 'tesst', 'testing', 'tested']
+    )
+print(len(auto('test')))
