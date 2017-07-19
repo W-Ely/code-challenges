@@ -9,7 +9,7 @@ class Autocomplete(Trie):
         """Init the Autocomplete."""
         Trie.__init__(self)
         if type(max_completions) is int and max_completions >= 0:
-            self._comps = max_completions
+            self._max_completions = max_completions
         else:
             raise TypeError(
                 "Max completions must be a positive integer"
@@ -18,7 +18,7 @@ class Autocomplete(Trie):
             with open(words, 'r') as file:
                 for line in file:
                     self.insert(" ".join(line.split()))
-        except (FileNotFoundError, TypeError):
+        except (IOError, TypeError):
             if type(words) in (tuple, list):
                 for word in words:
                     self.insert(word)
@@ -29,7 +29,7 @@ class Autocomplete(Trie):
         """Call class, get a list."""
         auto = self.word_traverse(string)
         result = []
-        for _ in range(self._comps):
+        for _ in range(self._max_completions):
             try:
                 result.append(next(auto))
             except (KeyError, StopIteration):
