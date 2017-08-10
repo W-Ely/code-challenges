@@ -1,4 +1,6 @@
-# Completed Katas [![Build Status](https://travis-ci.org/W-Ely/code-katas.svg?branch=master)](https://travis-ci.org/W-Ely/code-katas) [![Coverage Status](https://coveralls.io/repos/github/W-Ely/code-katas/badge.svg?branch=master)](https://coveralls.io/github/W-Ely/code-katas?branch=master)
+# Code Callenges [![Build Status](https://travis-ci.org/W-Ely/code-katas.svg?branch=master)](https://travis-ci.org/W-Ely/code-katas) [![Coverage Status](https://coveralls.io/repos/github/W-Ely/code-katas/badge.svg?branch=master)](https://coveralls.io/github/W-Ely/code-katas?branch=master)
+
+## Code Wars
 
 **Most Digits (7th kyu)**
 
@@ -66,11 +68,19 @@
 - **URL**: [challenge url](https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1/solutions/python)
 
 
-# On Codewars
+### On Codewars
 **URL** [W-Ely's Complete Solutions](https://www.codewars.com/users/W-Ely/completed_solutions)
 
 
-# Non-Codewars katas
+## Leetcode
+
+**42. Trapping Rain Water**
+
+- **Module**: `rain_water.py`
+- **Tests**: `test_rain_water.py`
+- **URL**: [challenge url](https://leetcode.com/problems/trapping-rain-water/description/)
+
+## Other Challenges
 
 **Properm Parentetics**
 
