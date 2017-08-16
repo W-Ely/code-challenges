@@ -190,6 +190,10 @@ def test_very_long_one():
         "aft", "alb", "len", "air", "pug", "pox", "vow", "got", "meg", "zoe",
         "amp", "ale", "bud", "gee", "pin", "dun", "pat", "ten", "mob"
     ]
-    expected = []
-    for path in find.findLadders(beginWord, endWord, wordList):
-        assert path in expected
+    expected = [
+        [
+            'cet', 'cot', 'con', 'ion', 'inn', 'ins',
+            'its', 'ito', 'ibo', 'ibm', 'ism'
+        ]
+    ]
+    assert find.findLadders(beginWord, endWord, wordList) == expected

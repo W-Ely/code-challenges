@@ -52,22 +52,21 @@ class Graph(dict):
 
     def find_paths(self,  start_val, end_val):
         """Find paths."""
-        queue = [[start_val]]
+        queue = [(start_val, set([start_val]), [start_val])]
         holding = []
         shortest = False
         paths = []
         while not shortest and queue:
             while queue:
-                print('paths', paths)
-                print('queue', queue)
-                path = queue.pop(0)
-                for val in [x for x in self[path[-1]] if x not in path]:
+                node, ref, path = queue.pop()
+                for val in [x for x in self[node] if x not in ref]:
                     if val == end_val:
                         shortest = True
                         paths.append(path + [val])
                     else:
-                        holding.append((val, path + [val]))
-            queue, holding = holding, []
+                        ref.add(val)
+                        holding.append((val, ref, path + [val]))
+            queue, holding = holding[::-1], []
         return paths
 
 
