@@ -12,8 +12,11 @@ def test_word_ladder_returns_two_paths():
         ["hit", "hot", "dot", "dog", "cog"],
         ["hit", "hot", "lot", "log", "cog"]
     ]
-    for path in find.findLadders(beginWord, endWord, wordList):
+    paths = find.findLadders(beginWord, endWord, wordList)
+    for path in paths:
         assert path in expected
+    for path in expected:
+        assert path in paths
 
 
 def test_no_path_returns_empty_list():
@@ -47,8 +50,11 @@ def test_few_more_words():
         ["red", "ted", "tex", "tax"],
         ["red", "rex", "tex", "tax"]
     ]
-    for path in find.findLadders(beginWord, endWord, wordList):
+    paths = find.findLadders(beginWord, endWord, wordList)
+    for path in paths:
         assert path in expected
+    for path in expected:
+        assert path in paths
 
 
 def test_long_one():
@@ -119,8 +125,11 @@ def test_long_one():
         ['qa', 'pa', 'pi', 'si', 'sq'],
         ['qa', 'pa', 'pt', 'st', 'sq']
     ]
-    for path in find.findLadders(beginWord, endWord, wordList):
+    paths = find.findLadders(beginWord, endWord, wordList)
+    for path in paths:
         assert path in expected
+    for path in expected:
+        assert path in paths
 
 
 def test_very_long_one():
