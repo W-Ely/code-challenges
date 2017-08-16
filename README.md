@@ -80,6 +80,12 @@
 - **Tests**: `test_rain_water.py`
 - **URL**: [challenge url](https://leetcode.com/problems/trapping-rain-water/description/)
 
+**126. Word Ladder II**
+
+- **Module**: `word_ladder.py`
+- **Tests**: `test_word_ladder.py`
+- **URL**: [challenge url](https://leetcode.com/problems/word-ladder-ii/description/)
+
 ## Other Challenges
 
 **Properm Parentetics**
