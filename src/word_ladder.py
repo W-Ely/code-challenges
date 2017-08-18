@@ -13,10 +13,12 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         wordList = set(wordList)
-        shortest = False
+        tree = {beginWord: set()}
         layer = [beginWord]
         chars = 'abcdefghijklmnopqrstuvwxyz'
-        tree = {beginWord: []}
+        shortest = False
+        stack = [(beginWord, {beginWord}, [beginWord])]
+        paths = []
         while not shortest and layer:
             for word in layer:
                 wordList.discard(word)
@@ -26,16 +28,12 @@ class Solution(object):
                     for char in chars:
                         word = node[:i] + char + node[i + 1:]
                         if word in wordList:
-                            if word not in tree:
-                                tree.setdefault(word, [])
-                            if word not in tree[node]:
-                                tree[node].append(word)
+                            tree[word] = set()
+                            tree[node].add(word)
                             temp.append(word)
-                            if word == endWord:
+                            if word is endWord:
                                 shortest = True
             layer = temp
-        stack = [(beginWord, {beginWord}, [beginWord])]
-        paths = []
         while stack:
             node, ref, path = stack.pop()
             for word in tree[node]:
