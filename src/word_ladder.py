@@ -13,62 +13,37 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         wordList = set(wordList)
-        graph =  Graph()
-        graph.add_node(beginWord)
         shortest = False
-        layer = set(beginWord)
+        layer = [beginWord]
+        chars = 'abcdefghijklmnopqrstuvwxyz'
+        tree = {beginWord: []}
         while not shortest and layer:
             for word in layer:
                 wordList.discard(word)
-            layer = set()
-            for node in graph.nodes():
-                for word in wordList:
-                    count = 0
-                    for i, letter in enumerate(word):
-                        if letter is not node[i]:
-                            count += 1
-                    if count == 1:
-                        graph.add_node(word)
-                        graph.add_edges(node, word)
-                        layer.add(word)
-                        if word == endWord:
-                            shortest = True
-        paths = graph.find_paths(beginWord, endWord)
-        return [path for path in paths]
-
-
-class Graph(dict):
-    """Create a graph data strcture modeled off a dictionary."""
-
-    def nodes(self):
-        """Return a list of all nodes in the graph."""
-        return list(self.keys())
-
-    def add_node(self, val):
-        """Add a new node with value 'val' to the graph."""
-        if val not in self:
-            self.setdefault(val, [])
-
-    def add_edges(self, val1, val2):
-        """Add a new edge to the graph."""
-        self.setdefault(val1, [])
-        self.setdefault(val2, [])
-        if val2 not in self[val1]:
-            self[val1].append(val2)
-
-    def find_paths(self,  start_val, end_val):
-        """Find paths."""
-        queue = [(start_val, {start_val}, [start_val])]
+            temp = []
+            for node in layer:
+                for i, letter in enumerate(node):
+                    for char in chars:
+                        word = node[:i] + char + node[i + 1:]
+                        if word in wordList:
+                            if word not in tree:
+                                tree.setdefault(word, [])
+                            if word not in tree[node]:
+                                tree[node].append(word)
+                            temp.append(word)
+                            if word == endWord:
+                                shortest = True
+            layer = temp
+        stack = [(beginWord, {beginWord}, [beginWord])]
         paths = []
-        while queue:
-            node, ref, path = queue.pop()
-            for val in self[node]:
-                if val not in ref:
-                    if val == end_val:
-                        shortest = True
-                        paths.append(path + [val])
+        while stack:
+            node, ref, path = stack.pop()
+            for word in tree[node]:
+                if word not in ref:
+                    if word == endWord:
+                        paths.append(path + [word])
                     else:
-                        queue.append(
-                            (val,  ref | set([val]), path + [val])
+                        stack.append(
+                            (word,  ref | set([word]), path + [word])
                         )
-        return paths
+        return [path for path in paths]
