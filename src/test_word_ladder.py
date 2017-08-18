@@ -200,9 +200,6 @@ def test_long_one():
 #         "amp", "ale", "bud", "gee", "pin", "dun", "pat", "ten", "mob"
 #     ]
 #     expected = [
-#         [
-#             'cet', 'cot', 'con', 'ion', 'inn', 'ins',
-#             'its', 'ito', 'ibo', 'ibm', 'ism'
-#         ]
+#['cet', 'cat', 'can', 'ian', 'inn', 'ins', 'its', 'ito', 'ibo', 'ibm', 'ism'], ['cet', 'get', 'gee', 'gte', 'ate', 'ats', 'its', 'ito', 'ibo', 'ibm', 'ism'], ['cet', 'cot', 'con', 'ion', 'inn', 'ins', 'its', 'ito', 'ibo', 'ibm', 'ism']
 #     ]
 #     assert find.findLadders(beginWord, endWord, wordList) == expected
