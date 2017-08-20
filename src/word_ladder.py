@@ -13,31 +13,17 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         wordList = set(wordList)
-        chars = 'abcdefghijklmnopqrstuvwxyz'
+        chars = [char for char in 'abcdefghijklmnopqrstuvwxyz']
         shortest = False
         stack = [(beginWord, [beginWord])]
         paths = []
+        word_length = len(beginWord)
         while not shortest and stack:
             temp = []
             while stack:
                 word, path = stack.pop()
                 wordList.discard(word)
-
-                # for entry in wordList:
-                #     count = 0
-                #     for i, char in enumerate(entry):
-                #         if char != word[i]:
-                #             count += 1
-                #     if count == 1:
-                #         if entry == endWord:
-                #             shortest = True
-                #             paths.append(path + [entry])
-                #         else:
-                #             temp.append(
-                #                 (entry,  path + [entry])
-                #             )
-
-                for i, letter in enumerate(word):
+                for i in range(word_length):
                     for char in chars:
                         new_word = word[:i] + char + word[i + 1:]
                         if new_word in wordList:
@@ -69,3 +55,5 @@ class Solution(object):
 #     "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye"
 # ]
 # print(find.findLadders(beginWord, endWord, wordList))
+# import timeit
+# print(timeit.timeit('test = {"test"}; test2 = "test"; test2 in test', number=10000))
