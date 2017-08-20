@@ -13,35 +13,59 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         wordList = set(wordList)
-        tree = {beginWord: set()}
-        layer = [beginWord]
         chars = 'abcdefghijklmnopqrstuvwxyz'
         shortest = False
-        stack = [(beginWord, {beginWord}, [beginWord])]
+        stack = [(beginWord, [beginWord])]
         paths = []
-        while not shortest and layer:
-            for word in layer:
-                wordList.discard(word)
+        while not shortest and stack:
             temp = []
-            for node in layer:
-                for i, letter in enumerate(node):
+            while stack:
+                word, path = stack.pop()
+                wordList.discard(word)
+
+                # for entry in wordList:
+                #     count = 0
+                #     for i, char in enumerate(entry):
+                #         if char != word[i]:
+                #             count += 1
+                #     if count == 1:
+                #         if entry == endWord:
+                #             shortest = True
+                #             paths.append(path + [entry])
+                #         else:
+                #             temp.append(
+                #                 (entry,  path + [entry])
+                #             )
+
+                for i, letter in enumerate(word):
                     for char in chars:
-                        word = node[:i] + char + node[i + 1:]
-                        if word in wordList:
-                            tree[word] = set()
-                            tree[node].add(word)
-                            temp.append(word)
-                            if word is endWord:
+                        new_word = word[:i] + char + word[i + 1:]
+                        if new_word in wordList:
+                            if new_word == endWord:
                                 shortest = True
-            layer = temp
-        while stack:
-            node, ref, path = stack.pop()
-            for word in tree[node]:
-                if word not in ref:
-                    if word == endWord:
-                        paths.append(path + [word])
-                    else:
-                        stack.append(
-                            (word,  ref | set([word]), path + [word])
-                        )
-        return [path for path in paths]
+                                paths.append(path + [new_word])
+                            else:
+                                temp.append(
+                                    (new_word,  path + [new_word])
+                                )
+            stack = temp
+        return paths
+#
+# #
+# find = Solution()
+# beginWord = "red"
+# endWord = "tax"
+# wordList = ["ted", "tex", "red", "tax", "tad", "den", "rex", "pee"]
+# beginWord = "qa"
+# endWord = "sq"
+# wordList = [
+#     "si", "go", "se", "cm", "so", "ph", "mt", "db", "mb", "sb", "kr", "ln",
+#     "tm", "le", "av", "sm", "ar", "ci", "ca", "br", "ti", "ba", "to", "ra",
+#     "fa", "yo", "ow", "sn", "ya", "cr", "po", "fe", "ho", "ma", "re", "or",
+#     "rn", "au", "ur", "rh", "sr", "tc", "lt", "lo", "as", "fr", "nb", "yb",
+#     "if", "pb", "ge", "th", "pm", "rb", "sh", "co", "ga", "li", "ha", "hz",
+#     "no", "bi", "di", "hi", "qa", "pi", "os", "uh", "wm", "an", "me", "mo",
+#     "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt", "io",
+#     "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye"
+# ]
+# print(find.findLadders(beginWord, endWord, wordList))
