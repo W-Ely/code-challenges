@@ -86,6 +86,7 @@ Works, but not optimized enough to pass their tests.
 - **Module**: `word_ladder.py`
 - **Tests**: `test_word_ladder.py`
 - **URL**: [challenge url](https://leetcode.com/problems/word-ladder-ii/description/)
+- **Creative solution** [shenjie1993](https://shenjie1993.gitbooks.io/leetcode-python/content/126%20Word%20Ladder%20II.html)
 
 ## Other Challenges
 
