@@ -1,4 +1,11 @@
-"""Leetcode 126. Word Ladder II."""
+"""Leetcode 126. Word Ladder II.
+
+
+After considerable efforts, this one is yet to pass leetcode's tests. It is
+still too slow. Perhaps retooling it to alternate between going forward from
+the beginWord and then backwards from the endWord would keep the iterations
+down a bit, but I've played with this one enough.
+"""
 
 
 class Solution(object):
@@ -14,10 +21,8 @@ class Solution(object):
         """
         wordList = set(wordList)
         chars = [char for char in 'abcdefghijklmnopqrstuvwxyz']
-        stack = [[beginWord]]
-        paths = []
+        stack, paths, temp = [[beginWord]], [], []
         while not paths and stack:
-            temp = []
             for path in stack:
                 wordList.discard(path[-1])
             while stack:
@@ -29,27 +34,5 @@ class Solution(object):
                             paths.append(path + [new_word])
                         elif new_word in wordList:
                             temp.append(path + [new_word])
-            stack = temp
+            stack, temp = temp, []
         return paths
-#
-# #
-# find = Solution()
-# beginWord = "red"
-# endWord = "tax"
-# wordList = ["ted", "tex", "red", "tax", "tad", "den", "rex", "pee"]
-# beginWord = "qa"
-# endWord = "sq"
-# wordList = [
-#     "si", "go", "se", "cm", "so", "ph", "mt", "db", "mb", "sb", "kr", "ln",
-#     "tm", "le", "av", "sm", "ar", "ci", "ca", "br", "ti", "ba", "to", "ra",
-#     "fa", "yo", "ow", "sn", "ya", "cr", "po", "fe", "ho", "ma", "re", "or",
-#     "rn", "au", "ur", "rh", "sr", "tc", "lt", "lo", "as", "fr", "nb", "yb",
-#     "if", "pb", "ge", "th", "pm", "rb", "sh", "co", "ga", "li", "ha", "hz",
-#     "no", "bi", "di", "hi", "qa", "pi", "os", "uh", "wm", "an", "me", "mo",
-#     "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt", "io",
-#     "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye"
-# ]
-# # print(find.findLadders(beginWord, endWord, wordList))
-# import timeit
-# print(timeit.timeit('test = []; test.append("test")', number=10000))
-# print(timeit.timeit('test = []; test += ["test"]', number=10000))
