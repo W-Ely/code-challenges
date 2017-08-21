@@ -14,26 +14,21 @@ class Solution(object):
         """
         wordList = set(wordList)
         chars = [char for char in 'abcdefghijklmnopqrstuvwxyz']
-        shortest = False
-        stack = [(beginWord, [beginWord])]
+        stack = [[beginWord]]
         paths = []
-        word_length = len(beginWord)
-        while not shortest and stack:
+        while not paths and stack:
             temp = []
+            for path in stack:
+                wordList.discard(path[-1])
             while stack:
-                word, path = stack.pop()
-                wordList.discard(word)
-                for i in range(word_length):
+                path = stack.pop()
+                for i in range(len(beginWord)):
                     for char in chars:
-                        new_word = word[:i] + char + word[i + 1:]
-                        if new_word in wordList:
-                            if new_word == endWord:
-                                shortest = True
-                                paths.append(path + [new_word])
-                            else:
-                                temp.append(
-                                    (new_word,  path + [new_word])
-                                )
+                        new_word = path[-1][:i] + char + path[-1][i + 1:]
+                        if new_word == endWord and new_word in wordList:
+                            paths.append(path + [new_word])
+                        elif new_word in wordList:
+                            temp.append(path + [new_word])
             stack = temp
         return paths
 #
@@ -54,6 +49,7 @@ class Solution(object):
 #     "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt", "io",
 #     "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye"
 # ]
-# print(find.findLadders(beginWord, endWord, wordList))
+# # print(find.findLadders(beginWord, endWord, wordList))
 # import timeit
-# print(timeit.timeit('test = {"test"}; test2 = "test"; test2 in test', number=10000))
+# print(timeit.timeit('test = []; test.append("test")', number=10000))
+# print(timeit.timeit('test = []; test += ["test"]', number=10000))
