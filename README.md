@@ -74,6 +74,13 @@
 
 ## Leetcode
 
+
+**1. Two Sum**
+
+- **Module**: `two_sum.py`
+- **Tests**: `test_two_sum.py`
+- **URL**: [challenge url](https://leetcode.com/problems/two-sum/description/)
+
 **42. Trapping Rain Water**
 
 - **Module**: `rain_water.py`
