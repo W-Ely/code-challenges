@@ -10,7 +10,7 @@ class Solution(object):
         """
         ref = {}
         for i, num in enumerate(nums):
-            posible = target - num
-            if posible in ref:
-                return [ref[posible], i]
+            possible = target - num
+            if possible in ref:
+                return [ref[possible], i]
             ref[num] = i
