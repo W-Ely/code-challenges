@@ -81,6 +81,11 @@
 - **Tests**: `test_two_sum.py`
 - **URL**: [challenge url](https://leetcode.com/problems/two-sum/description/)
 
+**3. Longest Substring Without Repeating Characters**
+- **Module**: `longest_substring.py`
+- **Tests**: `test_longest_substring.py`
+- **URL**: [challenge url](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
 **42. Trapping Rain Water**
 
 - **Module**: `rain_water.py`
