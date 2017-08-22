@@ -12,5 +12,12 @@ class Solution(object):
         for i, char in enumerate(s):
             if ord(char) in ref:
                 longest = max(ref[ord(char)] - i, longest)
+            else:
+                ref[ord(char)] = i
+                longest = max(ref[ord(char)] , longest)
             ref[ord(char)] = i
         return longest
+
+find = Solution()
+string = "abcbed"
+print(find.lengthOfLongestSubstring(string))
