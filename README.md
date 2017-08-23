@@ -88,13 +88,6 @@
 - **URL**: [challenge url](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 
 
-**4. Median of Two Sorted Arrays**
-
-- **Module**: `median_two_arrays.py`
-- **Tests**: `test_median_two_arrays.py`
-- **URL**: [challenge url](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)
-
-
 **42. Trapping Rain Water**
 
 - **Module**: `rain_water.py`
