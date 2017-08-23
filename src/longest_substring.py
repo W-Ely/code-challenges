@@ -1,28 +1,6 @@
 """Leetcode 3. Longest Substring Without Repeating Characters."""
 
 
-# class Solution(object):
-#     def lengthOfLongestSubstring(self, s):
-#         """
-#         :type s: str
-#         :rtype: int
-#         """
-#         ref = {}
-#         longest = 0
-#         for i, char in enumerate(s):
-#             ref[i] = set()
-#             to_discard = []
-#             for key in ref:
-#                 if char in ref[key]:
-#                     to_discard.append(key)
-#                 else:
-#                     ref[key].add(char)
-#                     if len(ref[key]) > longest:
-#                         longest = len(ref[key])
-#             for key in to_discard:
-#                 del ref[key]
-#         return longest
-
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -30,17 +8,18 @@ class Solution(object):
         :rtype: int
         """
         ref = {}
+        chars = set()
         longest = 0
+        j = 0
+        temp = {}
         for i, char in enumerate(s):
-            ref[i] = set()
-            to_discard = []
-            for key in ref:
-                if char in ref[key]:
-                    to_discard.append(key)
-                else:
-                    ref[key].add(char)
-                    if len(ref[key]) > longest:
-                        longest = len(ref[key])
-            for key in to_discard:
-                del ref[key]
+            while j < len(s) and s[j] not in chars:
+                ref[s[j]] = {}
+                ref[s[j]]["start"] = j
+                ref[char]["end"] = j
+                longest = max(ref[char]["end"]- ref[char]["start"] + 1, longest)
+                chars.add(s[j])
+                j += 1
+            del ref[char]
+            chars.remove(char)
         return longest
